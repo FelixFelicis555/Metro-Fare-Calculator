@@ -8,4 +8,33 @@ This project implements a fare calculation system for Singa Metro Authority's (S
 - **Configurable Peak Hours**: Peak hours are defined in a centralized configuration file for easy updates.
 - **Scalable Architecture**: Easily extendable to handle new fare rules, lines, and stations.
 
+## **📂 Project Structure**
 
+```
+├──comfig
+|   ├──fareConfig.js
+|
+├──data
+|  ├──journeys.csv   
+|
+├──handlers
+|  ├──DifferentLineHandler.js
+|  ├──SameLineHandler.js
+|  ├──FareHandler.js
+|  ├──FareCapHandler.js
+|
+├──utils
+|  ├──CSVParser.js
+|
+├──FareCalculator.js
+├──index.js
+|
+├── node_modules
+├── package.json
+├── package-lock.json
+└── .gitignore
+
+```
+## **⚙️ Installation and Setup**
+
+1. Clone the repository: **`git clone`**
