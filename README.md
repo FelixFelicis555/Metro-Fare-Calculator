@@ -33,8 +33,26 @@ This project implements a fare calculation system for Singa Metro Authority's (S
 ├── package.json
 ├── package-lock.json
 └── .gitignore
-
 ```
 ## **⚙️ Installation and Setup**
 
-1. Clone the repository: **`git clone`**
+   1. Clone the repository: **`git clone https://github.com/FelixFelicis555/sma-fare-calculator.git`**
+  2. Navigate to the project directory: **` cd sma-fare-calculator`**
+  3. Install dependencies: **`npm install`**
+  4. Run the Script: **`node index.js`**
+
+## **🧩 How It Works**
+  1. Input:
+     - A CSV file (journeys.csv) with each row containing:
+        - `FromLine`: Starting metro line (e.g., Green, Red).
+        -  `ToLine`: Ending metro line (e.g., Green, Red).
+        -  `datetime`: Date and time of travel (e.g., 2025-01-24T08:30:00).
+  2. Fare Calculation:
+     - Based on the FromLine and ToLine, the fare is determined by predefined peak and non-peak rates.
+     - If the journey occurs during peak hours, peak rates are applied; otherwise, non-peak rates are used.
+  3.  Fare Capping:
+      - Daily and weekly caps are enforced to limit maximum charges.
+      - The fare calculation keeps track of daily and weekly totals for individual commuters.
+  4.  Output:
+      - Displays the calculated fare for each journey and the total fare applied across all journeys
+
