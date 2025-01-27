@@ -8,8 +8,8 @@ class FareCapHandler extends FareHandler {
         this.weeklyFares={}; // Tracks weekly fares by week
     }
     handle(request){
-        // console.log('Handling request in FareCapHandler :');
-        const {fromLine,toLine,journeyTime}=request;
+        //console.log('Handling request in FareCapHandler :');
+        const {fromLine,toLine,journeyTime,fare}=request;
        
         const routeKey=`${fromLine}-${toLine}`;
         const dailyKey=`${this.getDailyKey(journeyTime)}:${routeKey}`;
@@ -18,11 +18,12 @@ class FareCapHandler extends FareHandler {
         // Get the fare caps for this route
         const {dailyCap,weeklyCap}=this.getCapValues(fromLine,toLine);
 
-        const baseFare=super.handle(request);
+        const baseFare=fare
+        
         this.dailyFares[dailyKey]=(this.dailyFares[dailyKey] || 0);
         this.weeklyFares[weeklyKey]=(this.weeklyFares[weeklyKey] || 0);
         let cappedFare=baseFare;
-
+      
         if(this.dailyFares[dailyKey]+cappedFare>dailyCap){
             cappedFare=Math.max(0,dailyCap-this.dailyFares[dailyKey]);
         }

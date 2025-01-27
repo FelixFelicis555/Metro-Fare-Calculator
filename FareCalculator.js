@@ -6,10 +6,15 @@ const fareConfig=require('./config/fareConfig');
 class FareCalculator {
     constructor(){
         this.chain=new SameLineHandler();
+        
+        this.chain.setNext(new DifferentLineHandler()).setNext(new FareCapHandler());
+        /*
         const sameLineHandler=this.chain;
         sameLineHandler.setNext(new DifferentLineHandler());
         const differentLineHandler=new DifferentLineHandler();
+        
         differentLineHandler.setNext(new FareCapHandler());
+        */
     }
     isPeakHour(journeyTime){
        

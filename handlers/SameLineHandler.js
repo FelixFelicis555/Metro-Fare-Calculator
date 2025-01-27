@@ -9,7 +9,9 @@ class SameLineHandler extends FareHandler{
     if(fromLine === toLine){
         const fareDetails=fareConfig.sameLine[fromLine];
         if(fareDetails){
-            return isPeak? fareDetails.peak : fareDetails.nonPeak;
+            const fare= isPeak? fareDetails.peak : fareDetails.nonPeak;
+            request.fare=fare;
+            return this.nextHandler ? this.nextHandler.handle(request):fare;
         }
     }
    // Pass the request to the next handler in the chain
