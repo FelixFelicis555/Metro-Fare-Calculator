@@ -1,7 +1,7 @@
 const fs=require("fs");
 const csv=require("csv-parser");
 
-
+// Simple File without any Design Pattern Implements the Fare-Calculation-Logic
 const FARE_RULES = {
     "Green-Green": { peak: 2, nonPeak: 1, dailyCap: 8, weeklyCap: 55 },
     "Red-Red": { peak: 3, nonPeak: 2, dailyCap: 12, weeklyCap: 70 },
