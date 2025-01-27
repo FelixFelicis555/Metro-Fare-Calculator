@@ -1,5 +1,5 @@
 ## **Singa Metro Authority (SMA) Fare Calculator**
-This project implements a fare calculation system for Singa Metro Authority's (SMA) public transport. Commuters can calculate their total fares based on the lines traveled, time of travel (peak/non-peak), and daily/weekly fare caps. The design is flexible, enabling the future addition of new lines, rules, and stations.
+This project implements a fare calculation system for Singa Metro Authority's (SMA) public transport. Commuters can calculate their total fares based on the lines traveled, time of travel (peak/non-peak), and daily/weekly fare caps. The design is flexible, enabling the future addition of new lines, rules, and stations. Most metro systems utilize smartcards to track individual passenger journeys and apply the fare calculations automatically. 
 
 ## **🚀 Features**
 - **Dynamic Fare Calculation**: Calculates fares based on the line combinations  and peak/non-peak hour rules.
@@ -8,32 +8,7 @@ This project implements a fare calculation system for Singa Metro Authority's (S
 - **Configurable Peak Hours**: Peak hours are defined in a centralized configuration file for easy updates.
 - **Scalable Architecture**: Easily extendable to handle new fare rules, lines, and stations.
 
-## **📂 Project Structure**
 
-```
-├──comfig
-|   ├──fareConfig.js
-|
-├──data
-|  ├──journeys.csv   
-|
-├──handlers
-|  ├──DifferentLineHandler.js
-|  ├──SameLineHandler.js
-|  ├──FareHandler.js
-|  ├──FareCapHandler.js
-|
-├──utils
-|  ├──CSVParser.js
-|
-├──FareCalculator.js
-├──index.js
-|
-├── node_modules
-├── package.json
-├── package-lock.json
-└── .gitignore
-```
 ## **⚙️ Installation and Setup**
 
    1. Clone the repository: **`git clone https://github.com/FelixFelicis555/sma-fare-calculator.git`**
@@ -55,4 +30,16 @@ This project implements a fare calculation system for Singa Metro Authority's (S
       - The fare calculation keeps track of daily and weekly totals for individual commuters.
   4.  Output:
       - Displays the calculated fare for each journey and the total fare applied across all journeys
+
+        
+## **🚧 Ongoing Work🛠️**
+ - **Testing**: We are in the process of adding unit and integration tests to ensure the reliability of the application.
+ - **Input Validation**: Enhancements for input validation are underway to ensure robust data handling and better error management.
+ - **Exception-Handling/Error-Handling**: The goal is to catch edge cases, invalid inputs, and unexpected scenarios with informative error messages and graceful fallbacks.
+
+## **Future Scope**
+ 1.  Advanced Fare Calculation Features
+ 2.  Integration with External Systems
+ 3.  Advanced User Personalization
+ 4.  Enhanced Reporting and Analytics
 
