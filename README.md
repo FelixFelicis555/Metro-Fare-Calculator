@@ -37,6 +37,11 @@ This project implements a fare calculation system for Singa Metro Authority's (S
  - **Input Validation**: Enhancements for input validation are underway to ensure robust data handling and better error management.
  - **Exception-Handling/Error-Handling**: The goal is to catch edge cases, invalid inputs, and unexpected scenarios with informative error messages and graceful fallbacks.
 
+## **Other Design-Patterns**
+- **`Strategy Pattern`**:  This will help us define different fare strategies based on the combination of lines (Green -> Green, Green -> Red, etc.) and whether it's peak or non-peak time.
+- **`State Pattern`**:    We can use this to track and apply daily and weekly caps, as fare capping changes based on the user's cumulative fare.
+- **`Factory Pattern`**:  This will help us create different fare strategy objects depending on the lines being travele
+
 ## **Future Scope**
  1.  Advanced Fare Calculation Features
  2.  Integration with External Systems
